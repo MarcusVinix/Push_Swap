@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 12:44:06 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/07 20:36:06 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/07 20:45:50 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,29 @@ t_stack	*take_first(t_stack *stack)
 void	parser_args(t_swap *swap, int argv, char **argc)
 {
 	int	i;
+	int	j;
 	t_stack	*tmp;
 	t_stack *new;
 
 	tmp = new_node();
-
-	
 	i = 1;
 	while (i <= argv)
 	{
+		j = 0;
 		printf("%i: %s\n", i, argc[i]);
-
+		while (argc[i][j])
+		{
+			if (!(ft_isdigit(argc[i][j])))
+			{
+				printf("ERROR\n");
+				exit(0);
+			}
+			j++;
+		}
 		tmp->num = ft_atoi(argc[i]);
 		printf("NODE %i: %i\n", i, tmp->num);
 		new = new_node();
 		new->prev = tmp;
-		printf("prev test: %i\n", new->prev->num);
 
 		tmp->next = new;
 		tmp = new;
