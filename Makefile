@@ -1,4 +1,4 @@
 git:
 	git add .
 	git commit -m "starting"
-	git push
+	git push origin main
