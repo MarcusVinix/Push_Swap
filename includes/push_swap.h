@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:17:55 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/07 17:49:38 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:00:03 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@ typedef struct s_swap
 }				t_swap;
 
 void	parser_args(t_swap *swap, int argv, char **argc);
+void	free_node(t_stack *node);
+t_stack	*take_first(t_stack *stack);
+t_stack	*new_node();
+void	check_duplicates(t_stack *stack);
+
+void	errors();
 
 #endif

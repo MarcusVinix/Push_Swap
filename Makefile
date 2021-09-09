@@ -1,9 +1,10 @@
 SRC_PATH = ./src/
+PARSER_PATH = $(SRC_PATH)parser/
 LIBFT_PATH = ./42libft/
 
 LIBFT = $(LIBFT_PATH)libft.a
-
-SRC = $(SRC_PATH)main.c $(SRC_PATH)parser.c
+SRC =	$(SRC_PATH)main.c $(SRC_PATH)errors.c \
+		$(PARSER_PATH)parser.c $(PARSER_PATH)stack_lst.c
 
 NAME = push_swap
 
@@ -18,8 +19,10 @@ $(NAME):
 $(LIBFT):
 	make -C $(LIBFT_PATH)
 clean:
+	make clean -C $(LIBFT_PATH)
 
 fclean: clean
+	make fclean -C $(LIBFT_PATH)
 
 re: fclean all
 
@@ -30,5 +33,5 @@ test: $(LIBFT)
 
 git:
 	git add .
-	git commit -m "starting store the args"
+	git commit -m "making the parser of args"
 	git push origin main

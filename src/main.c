@@ -6,11 +6,20 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:16:09 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/07 15:03:35 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/08 12:22:38 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	print_stack(t_stack *stack)
+{
+	while (stack->next)
+	{
+		printf("%i\n", stack->num);
+		stack = stack->next;
+	}
+}
 
 int	main(int argv, char **argc)
 {
@@ -21,5 +30,8 @@ int	main(int argv, char **argc)
 	if (argv < 2)
 		exit(0);
 	parser_args(&swap, argv - 1, argc);
-	printf("HI\n");
+	printf("------------------------------------------\n");
+	printf("FINAL: %i\n", swap.stack->num);
+	print_stack(swap.first);
+	free_node(swap.first);
 }

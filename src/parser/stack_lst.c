@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   stack_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 12:44:06 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/07 20:45:50 by mavinici         ###   ########.fr       */
+/*   Created: 2021/09/08 15:48:03 by mavinici          #+#    #+#             */
+/*   Updated: 2021/09/08 16:20:49 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*new_node()
 {
@@ -62,38 +62,40 @@ t_stack	*take_first(t_stack *stack)
 	return (stack);
 }
 
-void	parser_args(t_swap *swap, int argv, char **argc)
+int	ft_stack_size(t_stack *lst)
 {
-	int	i;
-	int	j;
-	t_stack	*tmp;
-	t_stack *new;
+	int	size;
 
-	tmp = new_node();
-	i = 1;
-	while (i <= argv)
+	if (lst == NULL)
+		return (0);
+	size = 1;
+	while (lst->next != NULL)
 	{
-		j = 0;
-		printf("%i: %s\n", i, argc[i]);
-		while (argc[i][j])
-		{
-			if (!(ft_isdigit(argc[i][j])))
-			{
-				printf("ERROR\n");
-				exit(0);
-			}
-			j++;
-		}
-		tmp->num = ft_atoi(argc[i]);
-		printf("NODE %i: %i\n", i, tmp->num);
-		new = new_node();
-		new->prev = tmp;
-
-		tmp->next = new;
-		tmp = new;
-		i++;
+		size++;
+		lst = lst->next;
 	}
-	swap->first = take_first(tmp);
-	printf("first is %i\n", swap->first->num);
-	free_node(swap->first);
+	return (size);
+}
+
+void	check_duplicates(t_stack *stack)
+{
+	t_stack	*current;
+	int		len;
+	int		len_2;
+
+	len = ft_stack_size(stack) - 1;
+	printf("len is %i\n", len);
+	while (len--)
+	{
+		current = stack;
+		len_2 = len;
+		while (len_2--)
+		{
+			printf("CURRENT: %i  next: %i\n", current->num, stack->next->num);
+			if (current->num == stack->next->num)
+				errors();
+			stack = stack->next;
+		}
+		stack = current->next;
+	}
 }
