@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 12:44:06 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/08 17:06:42 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/10 18:54:31 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_args(char *argc, t_stack **tmp)
 	{
 		check_int(str[i]);
 		(*tmp)->num = ft_atoi(str[i++]);
-		printf("NODE %i: %i\n", i, (*tmp)->num);
+		//printf("NODE %i: %i\n", i, (*tmp)->num);
 		new = new_node();
 		new->prev = *tmp;
 		(*tmp)->next = new;
@@ -84,14 +84,17 @@ void	parser_args(t_swap *swap, int argv, char **argc)
 	i = 1;
 	while (i <= argv)
 	{
-		printf("%i: %s\n", i, argc[i]);
+		//rintf("%i: %s\n", i, argc[i]);
 		check_number(argc[i]);
 		check_args(argc[i], &tmp);
 		i++;
 	}
-	printf("TESTE: %i\n", tmp->num);
-	swap->stack = tmp->prev;
-	swap->first = take_first(tmp);
-	check_duplicates(swap->first);
-	printf("first is %i\n", swap->first->num);
+//	printf("TESTE: %i\n", tmp->num);
+	swap->stack_a = tmp->prev;
+	free(swap->stack_a->next);
+	swap->stack_a->next = NULL;
+	//printf("TESTE2: %i\n", swap->stack_a->num);
+	swap->first_a = take_first(swap->stack_a);
+	check_duplicates(swap->first_a);
+	//printf("first is %i\n", swap->first->num);
 }

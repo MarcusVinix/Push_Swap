@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:48:03 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/08 16:20:49 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/10 21:38:11 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,21 @@ void	free_node(t_stack *node)
 t_stack	*take_first(t_stack *stack)
 {
 	//t_stack	*tmp;
-
+	if (!stack)
+		return (NULL);
 //	printf("CURRENT: %i\n", stack->prev->num);
-	while (stack)
+	while (stack->prev)
 	{
 
 		//tmp = stack->prev;
 		if (!stack->prev)
 			break ;
 		stack = stack->prev;
-		printf("prev: %i\n", stack->num);
+		//printf("prev: %i\n", stack->num);
 
 	}
-	printf("prev: %i\n", stack->num);
+//
+//	printf("prev: %i\n", stack->num);
 
 	return (stack);
 }
@@ -66,10 +68,10 @@ int	ft_stack_size(t_stack *lst)
 {
 	int	size;
 
-	if (lst == NULL)
+	if (!lst)
 		return (0);
 	size = 1;
-	while (lst->next != NULL)
+	while (lst->next)
 	{
 		size++;
 		lst = lst->next;
@@ -83,7 +85,7 @@ void	check_duplicates(t_stack *stack)
 	int		len;
 	int		len_2;
 
-	len = ft_stack_size(stack) - 1;
+	len = ft_stack_size(stack);
 	printf("len is %i\n", len);
 	while (len--)
 	{
@@ -91,7 +93,6 @@ void	check_duplicates(t_stack *stack)
 		len_2 = len;
 		while (len_2--)
 		{
-			printf("CURRENT: %i  next: %i\n", current->num, stack->next->num);
 			if (current->num == stack->next->num)
 				errors();
 			stack = stack->next;
