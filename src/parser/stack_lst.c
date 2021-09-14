@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:48:03 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/10 21:38:11 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/13 22:36:50 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,29 +64,14 @@ t_stack	*take_first(t_stack *stack)
 	return (stack);
 }
 
-int	ft_stack_size(t_stack *lst)
-{
-	int	size;
-
-	if (!lst)
-		return (0);
-	size = 1;
-	while (lst->next)
-	{
-		size++;
-		lst = lst->next;
-	}
-	return (size);
-}
-
 void	check_duplicates(t_stack *stack)
 {
 	t_stack	*current;
 	int		len;
 	int		len_2;
 
-	len = ft_stack_size(stack);
-	printf("len is %i\n", len);
+	len = ft_lstsize((t_list *)stack);
+	//printf("len is %i\n", len);
 	while (len--)
 	{
 		current = stack;

@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:17:55 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/10 21:29:19 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:05:24 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,19 @@ void	sa(t_stack **stack, t_swap *swap);
 void	sb(t_stack **stack, t_swap *swap);
 void	ss(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
 void	pa(t_stack **stack_to, t_stack **stack_from, t_swap *swap);
-void	pb(t_stack **stack_to, t_stack **stack_from, t_swap *swap);
+void	pb(t_stack **stack_from, t_stack **stack_to, t_swap *swap);
 void	rr(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
 void	ra(t_stack **stack, t_swap *swap);
 void	rb(t_stack **stack, t_swap *swap);
 void	rrr(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
 void	rra(t_stack **stack, t_swap *swap);
 void	rrb(t_stack **stack, t_swap *swap);
+
+//sort
+void	sort_node(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
+void	sort_three(t_stack **stack, t_swap *swap);
+void	sort_four(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
+void	sort_five(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
+int		is_order(t_stack *stack);
+
 #endif

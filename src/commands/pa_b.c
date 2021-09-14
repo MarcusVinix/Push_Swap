@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:09:35 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/10 21:04:35 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/13 23:01:59 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pa(t_stack **stack_to, t_stack **stack_from, t_swap *swap)
 	swap->size_b--;
 }
 
-void	pb(t_stack **stack_to, t_stack **stack_from, t_swap *swap)
+void	pb(t_stack **stack_from, t_stack **stack_to, t_swap *swap)
 {
 	if (swap->size_a <= 0)
 		return ;
