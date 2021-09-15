@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:21:42 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/10 20:56:29 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/15 17:34:18 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ int	ra_b(t_stack **stack)
 	t_stack	*tmp_last;
 	t_stack	*new;
 
-	if (!(*stack) || !(*stack)->next)
-		return (0);
 	new = (*stack)->next;
 	new->prev = NULL;
-	tmp_last = (t_stack *)ft_lstlast((t_list *)new);
+	tmp_last = (t_stack *)ft_lstlast((t_list *)(*stack));
 	tmp_last->next = *stack;
+	(*stack)->prev = tmp_last;
 	(*stack)->next = NULL;
 	*stack = new;
 	return (0);
