@@ -6,13 +6,13 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 14:10:31 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/08 14:11:51 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 19:27:24 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	errors()
+void	errors(void)
 {
 	ft_putendl_fd("Error", 1);
 	exit(0);

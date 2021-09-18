@@ -6,13 +6,13 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:48:03 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/15 12:07:47 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 19:27:31 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack	*new_node()
+t_stack	*new_node(void)
 {
 	t_stack *node;
 

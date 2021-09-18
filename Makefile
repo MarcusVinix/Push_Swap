@@ -6,7 +6,7 @@
 #    By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/09 10:10:37 by mavinici          #+#    #+#              #
-#    Updated: 2021/09/15 18:23:10 by mavinici         ###   ########.fr        #
+#    Updated: 2021/09/18 19:28:15 by mavinici         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,20 +31,18 @@ CC = clang
 CFLAGS = -Werror -Wextra -Wall -fsanitize=address
 RM = rm -rf
 
-all: 
+all: $(NAME)
 
-$(NAME):	$(LIBFT) $(OBJS)
+$(NAME): $(OBJS)
+	make -C $(LIBFT_PATH)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(PATH_OBJS)%.o:	$(PATH_SRC)%.C
 	@mkdir -p $(PATH_OBJS)
-	@mkdir -p $(PATH_OBJS)commands
-	@mkdir -p $(PATH_OBJS)parser
-	@mkdir -p $(PATH_OBJS)sort
+	@mkdir -p $(PATH_OBJS)src/commands
+	@mkdir -p $(PATH_OBJS)src/parser
+	@mkdir -p $(PATH_OBJS)src/sort
 	$(CC) $(CFLAGS) -I. -c $< -o $@
-
-$(LIBFT):
-	make -C $(LIBFT_PATH)
 
 clean:
 	make clean -C $(LIBFT_PATH)
@@ -63,5 +61,5 @@ test: $(LIBFT)
 
 git:
 	git add .
-	git commit -m "make functions to sort the list"
+	git commit -m "code work, but need fix the norm"
 	git push origin main

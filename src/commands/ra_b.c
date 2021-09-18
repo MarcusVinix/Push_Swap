@@ -6,13 +6,13 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:21:42 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/15 17:34:18 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 13:30:02 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ra_b(t_stack **stack)
+int	rra_b(t_stack **stack)
 {
 	t_stack	*tmp_last;
 	t_stack	*new;
@@ -27,27 +27,27 @@ int	ra_b(t_stack **stack)
 	return (0);
 }
 
-void	ra(t_stack **stack, t_swap *swap)
+void	rra(t_stack **stack, t_swap *swap)
 {
 	if (swap->size_a <= 1)
 		return ;
-	ra_b(stack);
-	ft_putendl_fd("ra", 1);
+	rra_b(stack);
+	ft_putendl_fd("rra", 1);
 }
 
-void	rb(t_stack **stack, t_swap *swap)
+void	rrb(t_stack **stack, t_swap *swap)
 {
 	if (swap->size_b <= 1)
 		return ;
-	ra_b(stack);
-	ft_putendl_fd("rb", 1);
+	rra_b(stack);
+	ft_putendl_fd("rrb", 1);
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
+void	rrr(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
 {
 	if (swap->size_b <= 1 && swap->size_a <= 1)
 		return ;
-	ra(stack_a, swap);
-	rb(stack_b, swap);
-	ft_putendl_fd("rr", 1);
+	rra(stack_a, swap);
+	rrb(stack_b, swap);
+	ft_putendl_fd("rrr", 1);
 }

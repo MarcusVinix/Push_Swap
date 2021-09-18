@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:16:09 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/15 18:17:13 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 18:40:11 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ int	main(int argv, char **argc)
 	//printf("SIZE %i\n", swap.size_a);
 	parser_args(&swap, argv - 1, argc);
 
-	//print_stack(swap.stack_a, ft_lstsize((t_list *)swap.stack_a));
+	//pb(&swap.stack_a, &swap.stack_b, &swap);
 	sort_node(&swap.stack_a, &swap.stack_b, &swap);
-	//printf("------------------------------------------\n\n");
+//	printf("----------------------B-------------------\n\n");
 //
-//	print_stack(swap.stack_a, ft_lstsize((t_list *)swap.stack_a));
+	//print_stack(swap.stack_a, swap.size_a);
+	//printf("----------------------B-------------------\n\n");
+	//print_stack(swap.stack_b, swap.size_b);
 
 	//printf("------------------------------------------\n\n");
 	//printf("FINAL: %i\n", swap.stack_a->num);
@@ -59,3 +61,11 @@ int	main(int argv, char **argc)
 	free_node(swap.stack_a);
 	//free_node(swap.first_b);
 }
+
+
+
+//8 1 3 6 4 5
+//1 3 6 4 5 8
+
+
+

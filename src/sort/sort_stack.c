@@ -6,15 +6,16 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:18:56 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/15 18:17:45 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 18:38:41 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	is_order(t_stack *stack)
+int	is_order(t_stack *stack, t_swap *swap)
 {
 	t_stack	*tmp;
+	(void)swap;
 
 	tmp = stack;
 	while (tmp && tmp->next)
@@ -63,18 +64,18 @@ void	revert(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
 
 void	sort_node(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
 {
-	if (is_order(*stack_a))
-		return ;
-	else if ((*stack_a)->num < (*stack_a)->next->num && swap->size_a == 2)
+	if (is_rev_order(*stack_a))
 		return ;
 	else if ((*stack_a)->num > (*stack_a)->next->num && swap->size_a == 2)
+		return ;
+	else if ((*stack_a)->num < (*stack_a)->next->num && swap->size_a == 2)
 		sa(stack_a, swap);
 	else if (swap->size_a == 3)
 		sort_three(stack_a, swap);
-	else if (swap->size_a == 4)
-		sort_four(stack_a, stack_b, swap);
-	else if (swap->size_a == 5)
-		sort_five(stack_a, stack_b, swap);
+	//else if (swap->size_a == 4)
+	//	sort_four(stack_a, stack_b, swap);
+	else if (swap->size_a == 5 || swap->size_a == 4)
+		sort_five(stack_a, stack_b, swap, 5);
 	else
 		sort_list(stack_a, stack_b, swap);
 }

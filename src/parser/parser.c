@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 12:44:06 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/15 12:07:33 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/17 14:24:44 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,15 @@ void	check_number(char *str)
 
 void	parser_args(t_swap *swap, int argv, char **argc)
 {
-	int	i;
 	t_stack	*tmp;
 
 	tmp = new_node();
-	i = 1;
-	while (i <= argv)
+	while (argv != 0)
 	{
 		//rintf("%i: %s\n", i, argc[i]);
-		check_number(argc[i]);
-		check_args(argc[i], &tmp);
-		i++;
+		check_number(argc[argv]);
+		check_args(argc[argv], &tmp);
+		argv--;
 	}
 //	printf("TESTE: %i\n", tmp->num);
 	tmp = tmp->prev;
