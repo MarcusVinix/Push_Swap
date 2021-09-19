@@ -6,7 +6,7 @@
 #    By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/09 10:10:37 by mavinici          #+#    #+#              #
-#    Updated: 2021/09/18 21:01:24 by mavinici         ###   ########.fr        #
+#    Updated: 2021/09/18 21:09:48 by mavinici         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ PARSER_PATH = $(SRC_PATH)parser/
 COMM_PATH = $(SRC_PATH)commands/
 SORT_PATH = $(SRC_PATH)sort/
 LIBFT_PATH = ./42libft/
+PATH_OBJS = ./objs/
 
 LIBFT = $(LIBFT_PATH)libft.a
 
@@ -37,7 +38,7 @@ $(NAME): $(OBJS)
 	make -C $(LIBFT_PATH)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(PATH_OBJS)%.o:	$(PATH_SRC)%.C
+$(PATH_OBJS)%.o:	$(PATH_SRC)%.c
 	@mkdir -p $(PATH_OBJS)
 	@mkdir -p $(PATH_OBJS)src/commands
 	@mkdir -p $(PATH_OBJS)src/parser
@@ -61,5 +62,5 @@ test: $(LIBFT)
 
 git:
 	git add .
-	git commit -m "fixing norm"
+	git commit -m "fixing obj"
 	git push origin main
