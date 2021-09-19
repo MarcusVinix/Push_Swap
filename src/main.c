@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:16:09 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/18 18:40:11 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 20:43:06 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	print_stack(t_stack *stack, int size)
 	i = 0;
 	while (i <= size - 1)
 	{
-	
 		printf("%i\n", stack->num);
 		stack = stack->next;
 		if (!stack)
@@ -34,38 +33,13 @@ int	main(int argv, char **argc)
 {
 	t_swap	swap;
 
-	//printf("ARGV %i\n", argv);
 	if (argv < 2)
 		exit(0);
-	//swap.stack_a = NULL;
 	swap.stack_b = NULL;
 	swap.stack_a = NULL;
 	swap.size_a = argv - 1;
 	swap.size_b = 0;
-	//printf("SIZE %i\n", swap.size_a);
 	parser_args(&swap, argv - 1, argc);
-
-	//pb(&swap.stack_a, &swap.stack_b, &swap);
 	sort_node(&swap.stack_a, &swap.stack_b, &swap);
-//	printf("----------------------B-------------------\n\n");
-//
-	//print_stack(swap.stack_a, swap.size_a);
-	//printf("----------------------B-------------------\n\n");
-	//print_stack(swap.stack_b, swap.size_b);
-
-	//printf("------------------------------------------\n\n");
-	//printf("FINAL: %i\n", swap.stack_a->num);
-	//printf("STACK\n");
-	//print_stack(swap.stack_a, ft_lstsize((t_list *)swap.stack_a));
-	//swap.size_a = ft_lstsize((t_list *)swap.stack_a);
 	free_node(swap.stack_a);
-	//free_node(swap.first_b);
 }
-
-
-
-//8 1 3 6 4 5
-//1 3 6 4 5 8
-
-
-

@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:48:03 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/18 19:27:31 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 19:38:51 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*new_node(void)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
@@ -27,10 +27,10 @@ t_stack	*new_node(void)
 
 void	free_node(t_stack *node)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!node)
-		return;
+		return ;
 	while (node)
 	{
 		tmp = node->next;
@@ -44,23 +44,14 @@ void	free_node(t_stack *node)
 
 t_stack	*take_first(t_stack *stack)
 {
-	//t_stack	*tmp;
 	if (!stack)
 		return (NULL);
-//	printf("CURRENT: %i\n", stack->prev->num);
 	while (stack->prev)
 	{
-
-		//tmp = stack->prev;
 		if (!stack->prev)
 			break ;
 		stack = stack->prev;
-		//printf("prev: %i\n", stack->num);
-
 	}
-//
-//	printf("prev: %i\n", stack->num);
-
 	return (stack);
 }
 
@@ -71,7 +62,6 @@ void	check_duplicates(t_stack *stack)
 	int		len_2;
 
 	len = ft_lstsize((t_list *)stack);
-	//printf("len is %i\n", len);
 	while (len--)
 	{
 		current = stack;

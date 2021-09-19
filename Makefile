@@ -6,7 +6,7 @@
 #    By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/09 10:10:37 by mavinici          #+#    #+#              #
-#    Updated: 2021/09/18 19:28:15 by mavinici         ###   ########.fr        #
+#    Updated: 2021/09/18 21:01:24 by mavinici         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFT = $(LIBFT_PATH)libft.a
 SRC =	$(SRC_PATH)main.c $(SRC_PATH)errors.c \
 		$(PARSER_PATH)parser.c $(PARSER_PATH)stack_lst.c \
 		$(COMM_PATH)sa_b.c $(COMM_PATH)pa_b.c $(COMM_PATH)ra_b.c $(COMM_PATH)rra_b.c \
-		$(SORT_PATH)sort_stack.c $(SORT_PATH)sort_min.c $(SORT_PATH)sort_list.c
+		$(SORT_PATH)sort_stack.c $(SORT_PATH)sort_min.c $(SORT_PATH)sort_list.c $(SORT_PATH)utils_sort.c
 
 OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
 
@@ -61,5 +61,5 @@ test: $(LIBFT)
 
 git:
 	git add .
-	git commit -m "code work, but need fix the norm"
+	git commit -m "fixing norm"
 	git push origin main

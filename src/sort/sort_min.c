@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 20:59:56 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/18 18:41:28 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 20:14:39 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ int	ft_min_num(t_stack **stack)
 
 void	sort_three(t_stack **stack, t_swap *swap)
 {
-	int	max_num;
+	int		max_num;
 	t_stack	*tmp;
+
 	max_num = ft_max_num(stack);
 	tmp = (t_stack *)ft_lstlast((t_list *)(*stack));
 	if (tmp->num == max_num)
@@ -59,16 +60,15 @@ void	sort_three(t_stack **stack, t_swap *swap)
 	else if ((*stack)->next->num == max_num)
 		rra(stack, swap);
 	tmp = (t_stack *)ft_lstlast((t_list *)(*stack));
-	
 	if (tmp->num > (*stack)->next->num)
 		sa(stack, swap);
 }
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b, t_swap *swap, int n)
 {
-	int	min;
-	int	count;
-	int	pos;
+	int		min;
+	int		count;
+	int		pos;
 	t_stack	*tmp;
 
 	count = 0;
@@ -92,50 +92,3 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b, t_swap *swap, int n)
 		sort_three(stack_a, swap);
 	pa(stack_a, stack_b, swap);
 }
-
-//void	sort_four(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
-//{
-//	int	min_num;
-//
-//	min_num = ft_min_num(stack_a);
-//	while ((*stack_a)->num != min_num)
-//		ra(stack_a, swap);
-//	pb(stack_a, stack_b, swap);
-//	sort_three(stack_a, swap);
-//	pa(stack_a, stack_b, swap);
-//}
-//
-//void	sort_five(t_stack **stack_a, t_stack **stack_b, t_swap *swap)
-//{
-//	int	min_num;
-//	t_stack *tmp;
-//
-//	tmp = (t_stack *)ft_lstlast((t_list *)(*stack_a));
-//	min_num = ft_min_num(stack_a);
-//	while (*stack_a)
-//	{
-//		if (min_num == tmp->num)
-//		{
-//			pb(stack_a, stack_b, swap);
-//			break ;
-//		}
-//		rra(stack_a, swap);
-//		tmp = (t_stack *)ft_lstlast((t_list *)(*stack_a));
-//	}
-//	tmp = (t_stack *)ft_lstlast((t_list *)(*stack_a));
-//	min_num = ft_min_num(stack_a);
-//	while (*stack_a)
-//	{
-//		if (min_num == tmp->num)
-//		{
-//			pb(stack_a, stack_b, swap);
-//			break ;
-//		}
-//		rra(stack_a, swap);
-//		tmp = (t_stack *)ft_lstlast((t_list *)(*stack_a));
-//	}
-//	sort_three(stack_a, swap);
-//	pa(stack_a, stack_b, swap);
-//	pa(stack_a, stack_b, swap);
-//}
-//

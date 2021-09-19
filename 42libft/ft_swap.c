@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 10:16:06 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/09 10:18:27 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 20:55:28 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;

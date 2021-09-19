@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcus <marcus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 11:33:00 by marcus            #+#    #+#             */
-/*   Updated: 2021/05/29 12:59:33 by marcus           ###   ########.fr       */
+/*   Updated: 2021/09/18 20:56:16 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void(*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del) (void *))
 {
 	t_list	*tmp;
 

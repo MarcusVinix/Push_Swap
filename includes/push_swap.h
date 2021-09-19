@@ -6,7 +6,7 @@
 /*   By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 21:17:55 by mavinici          #+#    #+#             */
-/*   Updated: 2021/09/18 19:27:46 by mavinici         ###   ########.fr       */
+/*   Updated: 2021/09/18 20:27:57 by mavinici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,13 @@ void	sort_three(t_stack **stack, t_swap *swap);
 void	sort_four(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
 void	sort_five(t_stack **stack_a, t_stack **stack_b, t_swap *swap, int n);
 void	sort_list(t_stack **stack_a, t_stack **stack_b, t_swap *swap);
-int		is_order(t_stack *stack, t_swap *swap);
+int		is_order(t_stack *stack);
 int		is_rev_order(t_stack *stack);
 int		ft_min_num(t_stack **stack);
 int		ft_max_num(t_stack **stack);
 
 void	check_pos_to_push(t_stack **stack, t_swap *swap, int pos);
+int		find_n_max_chunk(t_stack **stack, t_swap *swap, int *last, int chunk);
+void	check_pos_to_push(t_stack **stack, t_swap *swap, int pos);
+void	check_pos_to_push_b(t_stack **stack, t_swap *swap, int pos);
 #endif

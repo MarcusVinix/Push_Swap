@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	errors()
+static void	errors(void)
 {
 	ft_putendl_fd("Error", 1);
 	exit(0);
