@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mavinici <mavinici@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: marcus <marcus@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/09 10:10:37 by mavinici          #+#    #+#              #
-#    Updated: 2021/09/18 21:09:48 by mavinici         ###   ########.fr        #
+#    Updated: 2022/01/03 18:25:43 by marcus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,5 +62,5 @@ test: $(LIBFT)
 
 git:
 	git add .
-	git commit -m "fixing obj"
+	git commit -m "Making the readme"
 	git push origin main
